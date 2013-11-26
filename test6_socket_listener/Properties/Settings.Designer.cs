@@ -34,5 +34,17 @@ namespace test6_socket_listener.Properties {
                 this["port"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool active {
+            get {
+                return ((bool)(this["active"]));
+            }
+            set {
+                this["active"] = value;
+            }
+        }
     }
 }

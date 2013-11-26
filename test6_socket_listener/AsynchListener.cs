@@ -21,7 +21,7 @@ public class AsynchListener
 {
     // Thread signal.
     public static ManualResetEvent allDone = new ManualResetEvent(false);
-    public bool killThread = false;
+    public bool is_active = true;
 
     public AsynchListener()
     {
@@ -52,9 +52,11 @@ public class AsynchListener
 
             while (true)
             {
-                if (killThread)
+                this.is_active = test6_socket_listener.Properties.Settings.Default.active;
+                if (!is_active)
                 {
-                    throw new OperationCanceledException();
+                    Thread.Sleep(2000);
+                    continue;
                 }
                 // Set the event to nonsignaled state.
                 allDone.Reset();

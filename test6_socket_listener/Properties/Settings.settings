@@ -5,5 +5,8 @@
     <Setting Name="port" Type="System.String" Scope="User">
       <Value Profile="(Default)">50503</Value>
     </Setting>
+    <Setting Name="active" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
