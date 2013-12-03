@@ -25,7 +25,7 @@ public class SynchronousSocketClient
             try
             {
                 sender.Connect(remoteEP);
-                byte[] msg = bytes;
+                byte[] msg = Encoding.ASCII.GetBytes("\n");
 
                 int bytesSent = sender.Send(msg);
 
