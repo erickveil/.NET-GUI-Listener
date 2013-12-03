@@ -11,7 +11,10 @@ public class SynchronousSocketListener
     // Incoming data from the client.
     public static string data = null;
 
-    public void StartListening()
+    // This delegate has a signature that matches the method I want to call in the form
+    public delegate void updateDataBoxCallback(string msg);
+
+    public void StartListening(test6_socket_listener.Form1 form)
     {
         Thread this_thread = Thread.CurrentThread;
         // Data buffer for incoming data.
@@ -54,6 +57,10 @@ public class SynchronousSocketListener
                 // Show the data on the console.
                 Console.WriteLine("Text received : {0}", data);
 
+                // This is how we use the delagate to pass data back to the form's text box
+                form.tb_data.Invoke(new updateDataBoxCallback(form.updateDataBox), data);
+                
+
                 // Echo the data back to the client.
                 byte[] msg = Encoding.ASCII.GetBytes(data);
 
@@ -70,6 +77,6 @@ public class SynchronousSocketListener
 
         Console.WriteLine("\nPress ENTER to continue...");
         Console.Read();
-
     }
+
 }

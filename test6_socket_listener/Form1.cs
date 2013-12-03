@@ -15,19 +15,20 @@ namespace test6_socket_listener
         public bool ison = false;
         // Run the listener on its own thread so we can still use the GUI
         public SynchronousSocketListener listener = new SynchronousSocketListener();
-        //public AsynchListener listener = new AsynchListener();
         public Thread listen_thread;
 
         public Form1()
         {
             InitializeComponent();
-            
-            listen_thread = new Thread(listener.StartListening);
+
+            // We pass a closure to Thread so that we can start the method with a parameter.
+            // We pass a reference to the Thread's parent in this case, so that we have access to the output text box.
+            listen_thread = new Thread(() => { listener.StartListening(this); });
             // This will allow the thread to die when the program does.
             this.listen_thread.IsBackground = true;
             this.listen_thread.Start();
             this.listen_thread.Suspend();
-            //test6_socket_listener.Properties.Settings.Default.active = true;            
+            
         }
 
         private void start_stop_Click(object sender, EventArgs e)
@@ -35,7 +36,6 @@ namespace test6_socket_listener
             if ((listen_thread.ThreadState & (ThreadState.Suspended)) == ThreadState.Running)
             {
                 Console.WriteLine("Running detected. Attempting to suspend");
-                //test6_socket_listener.Properties.Settings.Default.active = false;
                 this.listen_thread.Suspend();
                 sendNullToListener();
             }
@@ -43,15 +43,25 @@ namespace test6_socket_listener
             {
                 Console.WriteLine("Suspended detected. Attempting to run");
                 this.listen_thread.Resume();
-                //test6_socket_listener.Properties.Settings.Default.active = true;
             }
         }
+
+        /**
+         * This method is redundant because we have a matching delegate in the listener. The delagate allows us to 
+         * indirectly, and legaly access the text box property in the middle of a loop.
+         */
+        public void updateDataBox(string msg)
+        {
+            tb_data.Text = msg;
+        }
+
+
 
         /**
          * We track the state of the thread itself, and provide some feedback as to its state.
          */
         private void timer1_Tick(object sender, EventArgs e)
-        {            
+        {
             try
             {
                 if ((listen_thread.ThreadState & (ThreadState.Suspended)) == 0)

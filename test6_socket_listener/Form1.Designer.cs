@@ -65,7 +65,7 @@
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1,
             this.state_button});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 74);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 157);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(341, 22);
             this.statusStrip1.TabIndex = 3;
@@ -99,8 +99,9 @@
             // tb_data
             // 
             this.tb_data.Location = new System.Drawing.Point(55, 41);
+            this.tb_data.Multiline = true;
             this.tb_data.Name = "tb_data";
-            this.tb_data.Size = new System.Drawing.Size(274, 20);
+            this.tb_data.Size = new System.Drawing.Size(274, 101);
             this.tb_data.TabIndex = 5;
             // 
             // port
@@ -121,7 +122,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(341, 96);
+            this.ClientSize = new System.Drawing.Size(341, 179);
             this.Controls.Add(this.tb_data);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.statusStrip1);
@@ -146,8 +147,8 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel state_button;
         private System.Windows.Forms.Label label2;
-        public System.Windows.Forms.TextBox tb_data;
         public System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.TextBox tb_data;
     }
 }
 
