@@ -46,5 +46,17 @@ namespace test6_socket_listener.Properties {
                 this["active"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string msg {
+            get {
+                return ((string)(this["msg"]));
+            }
+            set {
+                this["msg"] = value;
+            }
+        }
     }
 }

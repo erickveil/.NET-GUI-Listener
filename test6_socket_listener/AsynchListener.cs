@@ -126,6 +126,12 @@ public class AsynchListener
                 // client. Display it on the console.
                 Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
                     content.Length, content);
+
+                // Display data in GUI by setting the value in the linked setting:
+                test6_socket_listener.Properties.Settings.Default.msg = Convert.ToString(content);
+                
+
+
                 // Echo the data back to the client.
                 Send(handler, content);
             }

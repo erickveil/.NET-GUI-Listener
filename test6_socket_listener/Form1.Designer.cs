@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.port = new System.Windows.Forms.TextBox();
             this.start_stop = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.state_button = new System.Windows.Forms.ToolStripStatusLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.tb_data = new System.Windows.Forms.TextBox();
+            this.port = new System.Windows.Forms.TextBox();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,15 +47,6 @@
             this.label1.Size = new System.Drawing.Size(57, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Listen Port";
-            // 
-            // port
-            // 
-            this.port.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::test6_socket_listener.Properties.Settings.Default, "port", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.port.Location = new System.Drawing.Point(77, 13);
-            this.port.Name = "port";
-            this.port.Size = new System.Drawing.Size(115, 20);
-            this.port.TabIndex = 1;
-            this.port.Text = global::test6_socket_listener.Properties.Settings.Default.port;
             // 
             // start_stop
             // 
@@ -107,9 +98,17 @@
             // 
             this.tb_data.Location = new System.Drawing.Point(55, 41);
             this.tb_data.Name = "tb_data";
-            this.tb_data.ReadOnly = true;
             this.tb_data.Size = new System.Drawing.Size(274, 20);
             this.tb_data.TabIndex = 5;
+            // 
+            // port
+            // 
+            this.port.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::test6_socket_listener.Properties.Settings.Default, "port", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.port.Location = new System.Drawing.Point(77, 13);
+            this.port.Name = "port";
+            this.port.Size = new System.Drawing.Size(115, 20);
+            this.port.TabIndex = 1;
+            this.port.Text = global::test6_socket_listener.Properties.Settings.Default.port;
             // 
             // Form1
             // 
@@ -140,7 +139,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel state_button;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_data;
+        public System.Windows.Forms.TextBox tb_data;
     }
 }
 

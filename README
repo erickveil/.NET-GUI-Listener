@@ -1,0 +1,13 @@
+    A simple GUI Listener
+
+    We use the socket listener from the MSN example with minor changes.
+    We deal with preventing the listener from freezing the GUI by running it in its
+    own thread.
+    
+    Pressing the go button starts the listener in another thread.
+    
+    To stop the listener, we kill its thread: not the best way to do this.
+    
+    In the real application, the thread will keep running along side the
+    program, and the start/stop mechanism will effect simply skipping processes by
+    setting a flag.
