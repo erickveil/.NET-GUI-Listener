@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.start_stop = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -36,6 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.tb_data = new System.Windows.Forms.TextBox();
             this.port = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -110,6 +112,11 @@
             this.port.TabIndex = 1;
             this.port.Text = global::test6_socket_listener.Properties.Settings.Default.port;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -140,6 +147,7 @@
         private System.Windows.Forms.ToolStripStatusLabel state_button;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox tb_data;
+        public System.Windows.Forms.Timer timer1;
     }
 }
 
