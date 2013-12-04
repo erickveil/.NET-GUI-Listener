@@ -55,8 +55,6 @@ namespace test6_socket_listener
             tb_data.Text = msg;
         }
 
-
-
         /**
          * We track the state of the thread itself, and provide some feedback as to its state.
          */
