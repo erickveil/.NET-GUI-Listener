@@ -11,3 +11,7 @@
     In the real application, the thread will keep running along side the
     program, and the start/stop mechanism will effect simply skipping processes by
     setting a flag.
+
+    This sample demostrates a winsock listener, multithreading, closures, and
+    delegates.
+
